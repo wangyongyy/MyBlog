@@ -1,2 +1,3 @@
 require('./index.css');
-console.log('index.jsss1z568s');
+console.log('index.js自ssssdf ss动升ssss新');
+

@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack"
+    "dev": "webpack",
+    "dev2": "node app",
+    "dev3": "supervisor -w server,app.js,webpack.config.js -i server/views app",
+    "dev4": "set NODE_ENV=dev & supervisor -w server,app.js,webpack.config.js -i server/views app",
+    "dev5": "cross-env NODE_ENV=dev supervisor -w server,app.js,webpack.config.js -i server/views app",
+    "build": "webpack --config webpack.production.config"
   },
   "repository": {
     "type": "git",
@@ -18,8 +23,14 @@
   },
   "homepage": "https://github.com/wangyongyy/MyBlog#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
+    "reload": "^2.2.2",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.6.0",

@@ -1,5 +1,6 @@
 require('../index/index');
-console.log('我是入口文件');
-if(module.hot){
+console.log('我是入口文fsss');
+/*if(module.hot){
 	module.hot.accept();
 }
+*/
