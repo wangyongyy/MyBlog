@@ -1,0 +1,33 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "我的博客",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangyongyy/MyBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangyongyy/MyBlog/issues"
+  },
+  "homepage": "https://github.com/wangyongyy/MyBlog#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "file-loader": "^0.11.2",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.19.1"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "swig": "^1.4.2"
+  }
+}
