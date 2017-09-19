@@ -7,12 +7,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports={
     entry:{
-        'common/main':srcPath+'/common/common.js'
+        'common/main':srcPath+'/common/common.js',
+        'common/admin-lib':['bootstrap','BOOTSTRAP_CSS']
     },
     output:{
         path:__dirname+'/public',
         filename:'[name].js',
         publicPath:'http://localhost:8080/public'
+    },
+    resolve:{
+    	modules:[srcPath,'node_modules'],//知道查找规则
+    	//取别名，在自己的js文件里直接使用别名
+    	alias:{
+    		
+    		SRC:srcPath,
+    		BOOTSTRAP_CSS:'bootstrap/dist/css/bootstrap.css'
+    	}
     },
     //模块
     module:{
@@ -27,7 +37,24 @@ module.exports={
                 	fallback:"style-loader",
                 	use:"css-loader"
                 })
-            }
+            },
+            {
+        		test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+         		use: [
+           			'file-loader?limit=8192&name=/fonts/[name].[ext]'
+         		]
+       		},
+       		{
+	      		test: /\.js$/,
+	      		exclude: /node_modules/,
+	      		use: {
+	        		loader: 'babel-loader',
+	        		options: {
+	          		presets: ['env'],
+	          		plugins: ['transform-runtime','syntax-dynamic-import']
+	        		}
+	      		}
+	    	}
         ]
     },
     //插件
@@ -44,7 +71,7 @@ module.exports={
 			jQuery:'jquery'
 		}),
 		//压缩混淆
-		new webpack.optimize.UglifyJsPlugin(),
+		new webpack.optimize.UglifyJsPlugin(),//不支持混淆es6
     ]
 }
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>编辑添加</title>
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">切换导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">后台管理</a>
+			</div>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">文章列表</a></li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎你 {{ user.username }} <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+		
+		
+		<div class="container">
+			
+			<form id="myForm">
+				<input id="id" type="hidden" value="{{article.id}}" />
+				<div class="form-group">
+					<label for="title">文章标题</label>
+					<input value="{{article.title}}" id="title" name="title" type="text" class="form-control" required="required" placeholder="请输入文章标题">
+				</div>
+				<div class="form-group">
+					<label for="body">文章内容</label>
+					<textarea name="body" id="body" class="form-control" rows="20" placeholder="请输入文章内容" required="required">{{article.body}}</textarea>
+				</div>
+				
+			
+				<button type="submit" class="btn btn-primary pull-right">修改</button>
+			</form>
+			
+		</div>
+		
+		
+		<script data-main="admin/article/edit" src="/public/common/admin-lib.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/common/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

@@ -1,9 +1,4 @@
 body{
-	background: url(http://localhost:8080/public/img/touxiang.jpg) no-repeat;
-	background-size:auto;
-	color: red;
-}
-body{
 	background: url("https://cn.bing.com/az/hprichbg/rb/CityPalace_ZH-CN7843237957_1920x1080.jpg");
 	background-attachment: fixed;
 }
@@ -20,7 +15,7 @@ body{
 	display: block;
 	width: 80px;
 	height: 80px;
-	background: url(http://localhost:8080/public/img/touxiang.jpg) no-repeat center;
+	background: url(../index/touxiang.jpg) no-repeat center;
 	background-size: contain;
 	border-radius: 50%;
 	margin: 20px auto;
