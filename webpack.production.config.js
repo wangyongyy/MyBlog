@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports={
     entry:{
         'common/main':srcPath+'/common/common.js',
-        'common/admin-lib':['bootstrap','BOOTSTRAP_CSS']
+        'common/admin-lib':['jquery','bootstrap','BOOTSTRAP_CSS']
     },
     output:{
         path:__dirname+'/public',
@@ -21,7 +21,8 @@ module.exports={
     	alias:{
     		
     		SRC:srcPath,
-    		BOOTSTRAP_CSS:'bootstrap/dist/css/bootstrap.css'
+    		BOOTSTRAP_CSS:'bootstrap/dist/css/bootstrap.css',
+    		BOOTSTRAP_TABLE_CSS:'bootstrap-table/dist/bootstrap-table.css'
     	}
     },
     //模块
@@ -59,7 +60,9 @@ module.exports={
     },
     //插件
     plugins:[
-    	new CleanWebpackPlugin(['public']),
+    	new CleanWebpackPlugin(['public'],{
+    		exclude:['ueditor']
+    	}),
     	new ExtractTextPlugin({
     		filename:function(getPath){
     			return getPath('css/[name].css').replace('css/common','css');

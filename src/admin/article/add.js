@@ -1,4 +1,4 @@
-
+var ue = UE.getEditor('body');
 require('jquery-validation');
 require('jquery-validation/dist/localization/messages_zh')
 //兼容bootstrap
@@ -26,7 +26,7 @@ $('#myForm').validate({
 	rules:{
 		'title':{
 			'required':true,
-			'maxlength':18
+			'maxlength':26
 		},
 		'body':{
 			'required':true,
@@ -47,7 +47,7 @@ $('#myForm').validate({
 			method:'post',
 			data:{
 				'title':$('#title').val(),
-				'body':$('#body').val()
+				body:ue.getContent()
 			},
 			success:function(resp){
 				

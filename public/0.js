@@ -1,1 +1,1 @@
-webpackJsonp([0,8],{1:function(s,n,o){"use strict";o(20),console.log("index.js自ssssdf ss动升ssss新")},20:function(s,n){}});
+webpackJsonp([0,11],{1:function(s,n,o){"use strict";o(23),console.log("index.js自ssssdf ss动升ssss新")},23:function(s,n){}});

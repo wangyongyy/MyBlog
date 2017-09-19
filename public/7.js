@@ -1,1 +1,1 @@
-webpackJsonp([7],{21:function(n,c){}});
+webpackJsonp([7],{28:function(n,o,t){n.exports=t.p+"/fonts/iconfont.ttf"}});
