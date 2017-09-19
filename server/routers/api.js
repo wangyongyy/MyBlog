@@ -51,6 +51,8 @@ router.post('/user/check',(req,res,next)=>{
 			res.json(responseMesg);
 		}
 	})
-})
+});
+
+
 
 module.exports=router;

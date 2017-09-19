@@ -6,7 +6,8 @@ const srcPath = path.resolve(__dirname,'src');
 module.exports={
     entry:{
         'common/main':[srcPath+'/common/common.js','webpack-hot-middleware/client?reload=true'],
-        'common/admin-lib':['jquery','bootstrap','BOOTSTRAP_CSS']
+        'common/admin-lib':['jquery','bootstrap','BOOTSTRAP_CSS'],
+        'common/lib':['jquery','APP_CSS']
     },
     output:{
         path:__dirname+'/public',
@@ -21,7 +22,8 @@ module.exports={
     		
     		SRC:srcPath,
     		BOOTSTRAP_CSS:'bootstrap/dist/css/bootstrap.css',
-    		BOOTSTRAP_TABLE_CSS:'bootstrap-table/dist/bootstrap-table.css'
+    		BOOTSTRAP_TABLE_CSS:'bootstrap-table/dist/bootstrap-table.css',
+    		APP_CSS:'SRC/common/app.less'
     	}
     },
     //模块
@@ -32,10 +34,11 @@ module.exports={
         		use:'url-loader'
         	},
             {
-                test:/\.css$/,
+                test:/(\.css|.less)$/,
                 use:[
                     'style-loader',
-                    'css-loader?sourceMap'
+                    'css-loader?sourceMap',
+                    'less-loader'
                 ]
             },
             {
