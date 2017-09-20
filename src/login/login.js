@@ -36,7 +36,7 @@ $('#myForm').on('submit',function(e){
 					$(this).hide();
 				})
 			}
-			//console.log('这是后端返回给前端的数据',data)
+			
 		}
 	});
 })

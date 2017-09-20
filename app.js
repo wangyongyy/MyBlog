@@ -76,8 +76,6 @@ app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function (req, re
 
 
 
-//取出设置的环境变量
-console.log('取出的变量值',process.env.NODE_ENV);
 
 //是否是开发模式
 const isDev = process.env.NODE_ENV==='dev';
