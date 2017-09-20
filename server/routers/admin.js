@@ -133,10 +133,10 @@ router.post('/article/update',(req,res,next)=>{
 	})
 });
 
-/*//退出登录，重定向login
+//退出登录，重定向login
 router.get('/logout',(req,res,next)=>{
 	req.session.user=null;
 	res.redirect('/login');
-})*/
+})
 
 module.exports=router;

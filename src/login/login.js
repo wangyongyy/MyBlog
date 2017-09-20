@@ -1,5 +1,5 @@
 
-require('./login.css');
+require('!style-loader!css-loader!./login.css');
 let MD5=require('md5.js');
 
 $('#myForm').on('submit',function(e){
