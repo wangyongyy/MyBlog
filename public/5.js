@@ -1,1 +1,0 @@
-webpackJsonp([5],{30:function(p,n,o){p.exports=o.p+"/img/touxiang.jpg"}});

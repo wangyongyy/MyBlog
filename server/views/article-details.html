@@ -5,13 +5,12 @@
 		<div id="singular-content">
 			<article>
 				<header class="entry-header">
-					<h1>javascript</h1>
+					<h1>{{article.title}}</h1>
 				</header>
-				<div class="entry-content">内容</div>
+				<div class="entry-content">{{article.body|raw()}}</div>
 				<div class="clear"></div>
 			</article>
 		</div>
-		文章详情页
 	</div>
 {% endblock %}
 		

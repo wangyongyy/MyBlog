@@ -1,1 +1,0 @@
-webpackJsonp([8],{27:function(n,o,p){n.exports=p.p+"/fonts/iconfont.svg"}});

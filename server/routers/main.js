@@ -19,14 +19,50 @@ router.use((req,res,next)=>{
  *首页
  */
 router.get('/',(req,res,next)=>{
-	res.render('index')
+	//获取下前端传给后端的分页数据
+	let page = Number(req.query.page)||1;
+	let limit = 9;
+	let offset = (page-1)*limit;
+
+	Article.count().then(count=>{
+		responseMesg.data.total=count;  //查询数据总共有多少条
+	});
+	Article.find().sort({
+		'_id':-1
+	}).skip(offset).limit(limit).then(articles=>{
+		articles.map((item,index)=>{
+			//获取第一张图片作为封面
+			let result = item.body.match(/<img [^>]*src=['"]([^'"]+)[^>]*>/);
+			if(result){
+				item.cover=result[1];
+			}else{
+				item.cover='https://o0xihan9v.qnssl.com/wp-content/uploads/2015/07/2015073107381236_miao.jpg';
+			}
+			//过滤html并且截取70个字
+			item.body=item.body.replace(/<[^>]+>/g,"").substring(0,70)+'...';
+			//item.time=item.time.substring(0,7);
+		});
+		
+		res.render('index',{
+			articles
+		});
+	});
+	
 });
 
 /*
  *文章详情
  */
-router.get('/article/detail',(req,res,next)=>{
-	res.render('article-details')
+router.get('/article/detail/:id',(req,res,next)=>{
+	let id = req.params.id;
+	Article.findById(id).then(article=>{
+			res.render('article-details',{
+				article
+			})
+	}).catch(error=>{
+		res.render('404');
+	});
+
 });
 
 router.get('/index',(req,res,next)=>{

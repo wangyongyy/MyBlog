@@ -1,1 +1,0 @@
-webpackJsonp([6],{29:function(o,n,f){o.exports=f.p+"/fonts/iconfont.woff"}});
