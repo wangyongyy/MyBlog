@@ -34,7 +34,6 @@ $('#table').bootstrapTable({
 		},{
 			field:'title',
 			title:'标题',
-			width:150
 		},{
 			field:'body',
 			title:'内容',

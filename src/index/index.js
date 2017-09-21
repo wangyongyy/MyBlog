@@ -27,7 +27,6 @@ function reset(){
 	
 	let all_height = [];
 	$articles.each(function(index,item){
-		console.log(index,item);
 		let column = index%max_column;
 		let left = article_width_new*column;
 		let row = parseInt(index/max_column);
@@ -42,6 +41,10 @@ function reset(){
 		}
 		
 		$(item).css({
+			'-webkit-transform':'translate('+left+'px,'+top+'px)',
+			'-moz-transform':'translate('+left+'px,'+top+'px)',
+			'-ms-transform':'translate('+left+'px,'+top+'px)',
+			'-o-transform':'translate('+left+'px,'+top+'px)',
 			'transform':'translate('+left+'px,'+top+'px)'
 		})
 		

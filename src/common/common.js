@@ -9,6 +9,8 @@ if(modelPath){
 	})
 }
 
+
+
 //不是后台界面或者登陆界面
 if(!location.pathname.startsWith('/admin')&!location.pathname.startsWith('/login')){
 	require('jquery-pjax');

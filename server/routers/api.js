@@ -53,6 +53,9 @@ router.post('/user/check',(req,res,next)=>{
 	})
 });
 
+/*
+ *路由
+ */
 
 
 module.exports=router;
